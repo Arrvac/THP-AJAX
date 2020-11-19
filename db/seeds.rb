@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Email.destroy_all
+
+5.times do 
+    Email.create(object: Faker::Lorem.sentence(word_count: 3), body: Faker::Lorem.paragraph)
+end

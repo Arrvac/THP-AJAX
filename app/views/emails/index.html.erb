@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-md">
+      <ul id="all_mail">
+            <% @emails.each do |email| %>
+                <li><%= email.object %></li>
+            <% end %>
+      </ul>
+      <%= link_to 'Add', emails_path, method: :post, remote: true, class: "btn btn-outline-secondary" %>
+      
+    </div>
+    <div class="col col-md">
+        <ul id="selected_mail">
+        <li> kjrhgkajlgkalfghj </li>
+        </ul>
+    </div>
+  </div>
+</div>
