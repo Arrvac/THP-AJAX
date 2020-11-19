@@ -1,3 +1,5 @@
+document.querySelector("#mail_<%= @email.id %> a").classList = "text-muted"
+
 document.getElementById("selected_mail").innerHTML = "";
 
-document.getElementById("selected_mail").insertAdjacentHTML("beforeend", "<%= j render 'email_show', email: @email %>")
+document.getElementById("selected_mail").insertAdjacentHTML("beforeend", "<%= j render 'email_show', email: @email %>");

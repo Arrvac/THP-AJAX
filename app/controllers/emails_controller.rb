@@ -37,6 +37,16 @@ class EmailsController < ApplicationController
     end
   end
 
+  def update
+    @email = find_email
+    @email.read == true ? @email.update(read: false) : @email.update(read: true)
+    
+    respond_to do |format|
+      format.html { }
+      format.js { }
+    end
+  end
+
   private
 
   def email_params
