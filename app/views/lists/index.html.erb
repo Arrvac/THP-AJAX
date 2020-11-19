@@ -1,0 +1,15 @@
+<h1>Todo List</h1>
+<ul id="list">
+    <% @lists.each do |list| %>
+        <li><%= list.content %>  <%= link_to '(Delete)', list_path(list), method: :delete, remote: true %><li>
+    <% end %>
+</ul>
+
+<div class="form">
+  <%= form_tag(lists_path, method: :post, class: "form", remote: true) do %>
+    <label for="content">Content
+    <%= text_field_tag  :content %>
+
+    <%= submit_tag 'create', :name => 'commit'%>
+  <% end %>
+</div>
