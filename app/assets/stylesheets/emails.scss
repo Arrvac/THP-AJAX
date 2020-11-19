@@ -1,10 +1,20 @@
 // Place all the styles related to the emails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.container-fluid {
+    margin: 1rem;
+}
+
 #selected_mail {
-    background-color: green;
+    background-color: lightgreen;
+    border-radius: 5px;
 }
 
 #all_mail {
-    background-color: blue;
+    background-color: lightgreen;
+    border-radius: 5px;
+}
+
+li {
+    list-style-type: none;
 }

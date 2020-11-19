@@ -8,7 +8,28 @@ class EmailsController < ApplicationController
   end
 
   def create
-    @email = Email.create(object: Faker::Lorem.sentence(word_count: 3), body: Faker::Lorem.paragraph)
+    @email = Email.create(object: Faker::Lorem.sentence(word_count: 3), body: Faker::Lorem.paragraph, read: false)
+
+    respond_to do |format|
+      format.html { redirect_to emails_path }
+      format.js { }
+    end
+  end
+
+  def destroy
+    @email = find_email
+    
+    respond_to do |format|
+      format.html { redirect_to emails_path }
+      format.js { }
+    end
+    
+    @email.delete
+  end
+
+  def show
+    @email = find_email
+    @email.update(read: true)
 
     respond_to do |format|
       format.html { redirect_to emails_path }

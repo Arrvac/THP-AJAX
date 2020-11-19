@@ -1,18 +1,25 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col col-md">
       <ul id="all_mail">
             <% @emails.each do |email| %>
-                <li><%= email.object %></li>
+                <% if email.read == true %>
+                    <div class="list-group" id="mail_<%= email.id %>">
+                        <%= link_to email.object, email_path(email), remote: true, class: "text-muted" %>
+                    </div>
+                <% else %>
+                    <div class="list-group" id="mail_<%= email.id %>">
+                        <%= link_to email.object, email_path(email), remote: true %>
+                    </div>
+                <% end %>
             <% end %>
       </ul>
       <%= link_to 'Add', emails_path, method: :post, remote: true, class: "btn btn-outline-secondary" %>
-      
     </div>
     <div class="col col-md">
-        <ul id="selected_mail">
-        <li> kjrhgkajlgkalfghj </li>
-        </ul>
+        <div id="selected_mail">
+           
+        </div>
     </div>
   </div>
 </div>

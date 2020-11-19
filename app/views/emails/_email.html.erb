@@ -1,1 +1,3 @@
-<li><%= email.object %></li>
+<div class="list-group" id="mail_<%= email.id %>">
+    <%= link_to email.object, email_path(email), remote: true %>
+</div>
